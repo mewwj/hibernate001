@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-11 22:37:29 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="hibernate.Students" table="STUDENTS">
+        <id name="sid" type="int">
+            <column name="SID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="biirthday" type="java.util.Date">
+            <column name="BIIRTHDAY" />
+        </property>
+        <property name="picture" type="java.sql.Blob">
+            <column name="PICTURE" />
+        </property>
+          <component name="address" class="hibernate.Address">  
+            <property name="address" type="java.lang.String">  
+                <column name="address"/>  
+            </property>  
+            <property name="postcode" type="java.lang.String">  
+                <column name="postcode"/>  
+            </property>  
+            <property name="tel" type="java.lang.String">  
+                <column name="tel"/>  
+            </property>  
+        </component>
+    </class>
+</hibernate-mapping>
